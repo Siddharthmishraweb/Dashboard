@@ -1,16 +1,11 @@
-
 import React from "react";
-import { Box, Typography, Button, Grid, IconButton } from "@mui/material";
+import { Box, Typography, Button, Grid, Badge } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import TvIcon from '@mui/icons-material/Tv';
-import {
-  DownhillSkiingOutlined,
-  CheckCircleOutline,
-} from "@mui/icons-material"; 
 import BuildIcon from '@mui/icons-material/Build';
 import PermScanWifiIcon from '@mui/icons-material/PermScanWifi';
-import AccessAlarmIcon from "@mui/icons-material/AccessAlarm";
-
+import HistoryIcon from '@mui/icons-material/History';
+import CheckCircleOutline from '@mui/icons-material/CheckCircleOutline';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 
@@ -38,10 +33,30 @@ function IconTabs() {
 
   return (
     <Tabs value={value} onChange={handleChange} aria-label="icon tabs example">
-      <Tab wrapped icon={<TvIcon />} label="Overview" />
-      <Tab icon={<BuildIcon />} label="Environment Variables" />
-      <Tab icon={<PermScanWifiIcon />} label="Alerts" />
-      <Tab icon={<AccessAlarmIcon />} label="Event History" />
+      <Tab
+        icon={<TvIcon style={{ marginRight: 8 }} />}
+        label={<span>Overview</span>}
+        style={{ flexDirection: 'row' }}
+      />
+      <Tab
+        icon={<BuildIcon style={{ marginRight: 8 }} />}
+        label={<span>Environment Variables</span>}
+        style={{ flexDirection: 'row' }}
+      />
+      <Tab
+        icon={
+          <Badge color="error" variant="dot">
+            <PermScanWifiIcon style={{ marginRight: 8 }} />
+          </Badge>
+        }
+        label={<span>Alerts</span>}
+        style={{ flexDirection: 'row' }}
+      />
+      <Tab
+        icon={<HistoryIcon style={{ marginRight: 8 }} />}
+        label={<span>Event History</span>}
+        style={{ flexDirection: 'row' }}
+      />
     </Tabs>
   );
 }
@@ -51,7 +66,7 @@ const Overview = () => {
 
   return (
     <>
-      <Box className={classes.headerContainer} style={{display: "contents"}}>
+      <Box className={classes.headerContainer} style={{ display: "contents" }}>
         <Typography variant="h5">tic-tac-toe</Typography>
         <IconTabs />
       </Box>
