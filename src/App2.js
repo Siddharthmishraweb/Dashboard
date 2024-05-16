@@ -40,6 +40,10 @@ const App2 = () => {
                         </Grid>
                     ): selectedTab === 1 ? (
                         <EnvironmentVariables />
+                    ) : selectedTab === 3 ? (
+                        <EventHistory />
+                    ) :  selectedTab === 2 ? (
+                        <SystemMetrics />
                     ) : null}
                 </Container>
             </Box>

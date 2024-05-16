@@ -45,7 +45,7 @@ const EnvironmentVariables = () => {
   return (
     <>
       <div style={{ backgroundColor: "white", minHeight: "50vh", padding: "20px" }}>
-        <Typography variant="h5" style={{ fontWeight: "bold" }}>
+        <Typography variant="h5" style={{ fontWeight: "bold", display: "flex", justifyContent: "space-between" }}>
           Environment Variables
           <IconButton color="primary" onClick={handleOpen}>
             +
